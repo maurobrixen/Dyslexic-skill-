@@ -42,6 +42,8 @@ Questo repository raccoglie e organizza tutte le skill sviluppate su misura per 
 | Nome Skill | Descrizione | Percorso |
 | :--- | :--- | :--- |
 | `_template` | Template base per la creazione di nuove skill | [`skills/_template/SKILL.md`](./skills/_template/SKILL.md) |
+| `mb-chembl-database` | Interrogazione ChEMBL DB (molecole, target, bioattività, SDF/SVG) | [`skills/mb-chembl-database/SKILL.md`](./skills/mb-chembl-database/SKILL.md) |
+
 
 ---
 
