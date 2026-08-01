@@ -43,6 +43,8 @@ Questo repository raccoglie e organizza tutte le skill sviluppate su misura per 
 | :--- | :--- | :--- |
 | `_template` | Template base per la creazione di nuove skill | [`skills/_template/SKILL.md`](./skills/_template/SKILL.md) |
 | `mb-chembl-database` | Interrogazione ChEMBL DB (molecole, target, bioattività, SDF/SVG) | [`skills/mb-chembl-database/SKILL.md`](./skills/mb-chembl-database/SKILL.md) |
+| `mb-save-system` | Salvataggio sessione, compattazione contesto e sync Git (`/ms`, `/ms salva-push`) | [`skills/mb-save-system/SKILL.md`](./skills/mb-save-system/SKILL.md) |
+
 
 
 ---
