@@ -13,7 +13,7 @@
 
 ### 📌 Caratteristiche Principali
 
-- 💾 **MB Save System (`mb-save-system`)**: Sistema avanzato per il salvataggio della sessione (`/ms`), compattazione del contesto in `HANDOFF.md`, pulizia dei cicli di loop e sincronizzazione automatica con GitHub.
+- 💾 **MB Save System (`mb-save-system`)**: Sistema avanzato per il salvataggio della sessione (`/mb`), compattazione del contesto in `HANDOFF.md`, pulizia dei cicli di loop e sincronizzazione automatica con GitHub.
 - 🧪 **ChEMBL Bio-Database (`mb-chembl-database`)**: Interrogazione farmacologica, dati di bioattività (`IC50`, `Ki`), target molecolari, download di strutture SDF 3D e immagini 2D.
 - 📐 **Template Riutilizzabile (`_template`)**: Modello standard con intestazione YAML per creare rapidamente nuove skill conforme alle specifiche ufficiali.
 
@@ -69,23 +69,23 @@ Aggiungi il percorso di questo repository all'interno del file di configurazione
 
 | Nome Skill | Descrizione | Comandi / Trigger | Percorso |
 | :--- | :--- | :--- | :--- |
-| **`mb-save-system`** | Salvataggio sessione, compattazione contesto & push Git | `/ms`, `/ms salva-push`, `/ms salva-compatta` | [`skills/mb-save-system/SKILL.md`](./skills/mb-save-system/SKILL.md) |
+| **`mb-save-system`** | Salvataggio sessione, compattazione contesto & push Git | `/mb`, `/mb salva-push`, `/mb salva-compatta` | [`skills/mb-save-system/SKILL.md`](./skills/mb-save-system/SKILL.md) |
 | **`mb-chembl-database`** | Interrogazione molecole bioattive, target e bioattività | `/chembl-database`, ChEMBL queries | [`skills/mb-chembl-database/SKILL.md`](./skills/mb-chembl-database/SKILL.md) |
 | **`_template`** | Modello standard per la creazione di nuove skill | Custom | [`skills/_template/SKILL.md`](./skills/_template/SKILL.md) |
 
 ---
 
-### 💾 Guida Dettagliata a `mb-save-system` (`/ms`)
+### 💾 Guida Dettagliata a `mb-save-system` (`/mb`)
 
 La skill `mb-save-system` risolve il problema della **perdita di memoria tra le sessioni** e **riduce drasticamente il consumo dei token** sintetizzando lo stato in un file `HANDOFF.md`.
 
 #### Modalità di utilizzo:
 
-- **`/ms salva`**: Genera un report rapido `SESSION_STATE.md` contenente status git, commit recente e file modificati.
-- **`/ms salva-compatta`**: Genera un file `HANDOFF.md` compresso con obiettivi raggiunti, decisioni architetturali e task aperti a bassissimo costo di token per il riavvio della sessione.
-- **`/ms salva-push`**: Esegue la compattazione del contesto, lo stage dei file (`git add .`), il commit ed il `git push` su GitHub.
-- **`/ms compact-loop`**: Sintetizza i cicli di loop lunghi o iterativi per liberare contesto nell'agente.
-- **`/ms ripristina`**: Consente all'agente di riprendere la sessione ricaricando all'istante lo stato da `HANDOFF.md`.
+- **`/mb salva`**: Genera un report rapido `SESSION_STATE.md` contenente status git, commit recente e file modificati.
+- **`/mb salva-compatta`**: Genera un file `HANDOFF.md` compresso con obiettivi raggiunti, decisioni architetturali e task aperti a bassissimo costo di token per il riavvio della sessione.
+- **`/mb salva-push`**: Esegue la compattazione del contesto, lo stage dei file (`git add .`), il commit ed il `git push` su GitHub.
+- **`/mb compact-loop`**: Sintetizza i cicli di loop lunghi o iterativi per liberare contesto nell'agente.
+- **`/mb ripristina`**: Consente all'agente di riprendere la sessione ricaricando all'istante lo stato da `HANDOFF.md`.
 
 ---
 

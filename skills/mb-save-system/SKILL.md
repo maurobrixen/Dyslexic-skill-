@@ -3,7 +3,7 @@ name: mb-save-system
 description: >
   Skill MB per la conservazione del contesto e l'ottimizzazione dei token a fine sessione.
   Permette di effettuare salvataggi rapidi, compattazione del contesto in HANDOFF.md,
-  aggiornamento dei cicli di loop e push automatico su GitHub (tramite comandi come /ms, /ms salva, /ms salva-compatta, /ms salva-push).
+  aggiornamento dei cicli di loop e push automatico su GitHub (tramite comandi come /mb, /mb salva, /mb salva-compatta, /mb salva-push).
 ---
 
 # 💾 MB Skill - System Save & Context Preservation
@@ -15,18 +15,18 @@ Questa skill fornisce all'agente un **protocollo avanzato per il salvataggio del
 ## 🎯 Quando Usare Questa Skill
 
 Attiva questa skill ogni volta che l'utente usa un comando o frase come:
-- `/ms` o `/ms salva`
-- `/ms salva-compatta` o `/ms compact`
-- `/ms salva-push` o `/ms push`
-- `/ms compact-loop`
-- `/ms ripristina`
+- `/mb` o `/mb salva`
+- `/mb salva-compatta` o `/mb compact`
+- `/mb salva-push` o `/mb push`
+- `/mb compact-loop`
+- `/mb ripristina`
 - Frasi come *"salva la sessione"*, *"compatti il contesto prima di chiudere"*, *"fai il push e salva lo stato"*.
 
 ---
 
 ## 🛠️ Comandi Operativi & Modalità
 
-### 1. `/ms salva` (Salvataggio Semplice)
+### 1. `/mb salva` (Salvataggio Semplice)
 Crea o aggiorna il file `SESSION_STATE.md` nel workspace con:
 - Data e ora del salvataggio.
 - Branch Git attivo e ultimo commit.
@@ -39,7 +39,7 @@ python skills/mb-save-system/scripts/save_cli.py save --note "Descrizione sintet
 
 ---
 
-### 2. `/ms salva-compatta` (Salvataggio & Compattazione Contesto)
+### 2. `/mb salva-compatta` (Salvataggio & Compattazione Contesto)
 Genera sia `SESSION_STATE.md` che un file **`HANDOFF.md`** altamente compresso e ottimizzato a basso consumo di token per il riavvio della sessione.
 
 **Esecuzione Agente**:
@@ -55,7 +55,7 @@ Genera sia `SESSION_STATE.md` che un file **`HANDOFF.md`** altamente compresso e
 
 ---
 
-### 3. `/ms salva-push` (Salvataggio, Compattazione & Push su GitHub)
+### 3. `/mb salva-push` (Salvataggio, Compattazione & Push su GitHub)
 Esegue la compattazione del contesto (`salva-compatta`), poi effettua lo stage dei file, il commit ed il push su GitHub.
 
 **Esecuzione Agente**:
@@ -65,12 +65,12 @@ python skills/mb-save-system/scripts/save_cli.py push --message "feat/save: salv
 
 ---
 
-### 4. `/ms compact-loop` (Compattazione Cicli di Loop)
+### 4. `/mb compact-loop` (Compattazione Cicli di Loop)
 Pulisce i file di lavoro temporanei e sintetizza i log prolissi di sviluppo o debug per evitare sovraccarico di token nel contesto dell'agente.
 
 ---
 
-### 5. `/ms ripristina` (Ripristino Context a Inizio Sessione)
+### 5. `/mb ripristina` (Ripristino Context a Inizio Sessione)
 All'avvio di una nuova sessione, se è presente un file `HANDOFF.md` o `SESSION_STATE.md`, leggi immediatamente quel file usando `view_file` per ripristinare istantaneamente il contesto con il minimo consumo di token.
 
 ---
