@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-plugin-marketplace.json",
+  "name": "MB Skills Suite",
+  "description": "Suite completa di 10 Skill MB per Antigravity IDE, Gemini Agent e Claude Code (Pensiero Visivo, Council Planner, UI Designer, Second Brain, Git Orchestrator, ecc.)",
+  "owner": "maurobrixen",
+  "plugins": [
+    {
+      "name": "mb-skills-suite",
+      "description": "Suite completa di Skill e strumenti MB per sviluppo visivo e dislessia",
+      "version": "1.0.0",
+      "path": "./"
+    }
+  ]
+}
