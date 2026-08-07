@@ -23,6 +23,7 @@
 - 🌿 **MB Autonomous Git Orchestrator (`mb-autonomous-git-orchestrator`)**: Orchestrazione avanzata di versione Git, commit semantici, tag di release e sync remoto.
 - 🌌 **MB Antigravity UI Designer (`mb-antigravity-ui-designer`)**: Design System per interfacce utente visive ad alto impatto, micro-animazioni CSS3 e temi ad alto contrasto.
 - 📐 **Template Riutilizzabile (`_template`)**: Modello standard con intestazione YAML per creare rapidamente nuove skill conforme alle specifiche ufficiali.
+- 🌐 **Web Control Center (`web_app/`)**: Dashboard standalone in Neon Glassmorphism (HTML5/CSS3/JS) con auditing crittografico Secp256k1 in tempo reale, navigatore della Cattedrale della Memoria e sintetizzatore biofeedback.
 
 ---
 
