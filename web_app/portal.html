@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ginevra Gateway #1 - Punto di Accesso Sicuro Unificato</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .portal-card {
+      background: rgba(10, 15, 30, 0.7);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .portal-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-bar">
+    <div class="logo-area">
+      <img src="ginevra_avatar.png" alt="Ginevra Red Curls Avatar" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--accent-cyan); box-shadow: 0 0 16px var(--accent-cyan); object-fit: cover;">
+      <div class="logo-title">Ginevra Gateway #1 - Punto di Accesso Sicuro</div>
+    </div>
+    <div class="status-pills">
+      <div class="pill">
+        <div class="pill-status"></div>
+        <span>Secp256k1 Signed Block #24</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <div class="card col-12" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.25), rgba(121, 40, 202, 0.25)); border-color: var(--accent-cyan); text-align: center; padding: 2.5rem 1.5rem;">
+      <img src="ginevra_avatar.png" alt="Ginevra Avatar" style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--accent-cyan); box-shadow: 0 0 30px rgba(0,242,254,0.5); object-fit: cover; margin-bottom: 1rem;">
+      <h1 style="color: #fff; font-size: 1.8rem; margin-bottom: 0.5rem;">PUNTO DI ACCESSO SICURO UNIFICATO #1</h1>
+      <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 680px; margin: 0 auto; line-height: 1.6;">
+        "La libertà di ciascuno inizia e finisce dove inizia e finisce quella dell'altro."<br>
+        <span style="font-size: 0.88rem; color: var(--accent-cyan);">Tutti i moduli dell'Ecosistema Ginevra in un unico Gateway protetto.</span>
+      </p>
+    </div>
+
+    <!-- PORTAL ROUTING GRID -->
+    <div class="card col-12">
+      <div class="card-header">
+        <div class="card-title">
+          <span>🗝️</span> Seleziona la Destinazione Sicura
+        </div>
+      </div>
+
+      <div class="portal-grid">
+        
+        <!-- Destination 1: DSO Console -->
+        <a href="dso.html" class="portal-card" style="border-color: var(--accent-magenta);">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
+            <h3 style="color: var(--accent-magenta); font-size: 1.2rem; margin-bottom: 0.4rem;">Console DSO DevSecOps</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">
+              Accesso riservato e protetto da password. Verifica chiavi, firma Secp256k1 e dialogo vocale diretto col DSO.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; color: var(--accent-magenta); font-weight: 600; font-size: 0.85rem;">🔒 Richiede Password →</div>
+        </a>
+
+        <!-- Destination 2: Symbiosis X -->
+        <a href="symbiosis.html" class="portal-card" style="border-color: var(--accent-pink);">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+            <h3 style="color: var(--accent-pink); font-size: 1.2rem; margin-bottom: 0.4rem;">Ginevra Symbiosis X</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">
+              Simbiosi cognitiva GenX Pioneer Mindset. Pensiero visivo 3D fuori dagli schemi e risonanza neurale.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; color: var(--accent-pink); font-weight: 600; font-size: 0.85rem;">🧠 Accedi alla Simbiosi →</div>
+        </a>
+
+        <!-- Destination 3: Second Change Simulator -->
+        <a href="civitas.html" class="portal-card" style="border-color: var(--accent-green);">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔮</div>
+            <h3 style="color: var(--accent-green); font-size: 1.2rem; margin-bottom: 0.4rem;">Second Change Simulator</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">
+              Simulazione della società basata sulla Legge Suprema e cruscotto KPI di rispetto delle regole in tempo reale.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; color: var(--accent-green); font-weight: 600; font-size: 0.85rem;">📊 Apri KPI & Simulatore →</div>
+        </a>
+
+        <!-- Destination 4: Master Control Center -->
+        <a href="index.html" class="portal-card" style="border-color: var(--accent-cyan);">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👑</div>
+            <h3 style="color: var(--accent-cyan); font-size: 1.2rem; margin-bottom: 0.4rem;">Master Control Center</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">
+              Pannello di controllo generale, Avatar 3D, Cattedrale della Memoria ed oscillatore biofeedback.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; color: var(--accent-cyan); font-weight: 600; font-size: 0.85rem;">⚡ Apri Control Center →</div>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

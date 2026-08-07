@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ginevra DevSecOps (DSO) Direct Interface</title>
+  <title>Ginevra DevSecOps (DSO) Password Protected Interface</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
   <header class="header-bar">
     <div class="logo-area">
       <img src="ginevra_avatar.png" alt="Ginevra Avatar" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-cyan); box-shadow: 0 0 12px var(--accent-cyan); object-fit: cover;">
-      <div class="logo-title">Ginevra DevSecOps (DSO) Direct Interface</div>
+      <div class="logo-title">Ginevra DevSecOps (DSO) Console - Protetto</div>
     </div>
     <div class="status-pills">
       <a href="index.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.8rem;">← Torna al Control Center</a>
@@ -24,34 +24,53 @@
 
   <main class="main-container">
     
-    <div class="card col-12" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(121, 40, 202, 0.2)); border-color: var(--accent-cyan);">
-      <div class="card-header">
-        <div class="card-title" style="font-size: 1.3rem;">
-          <span>🛡️</span> Interfaccia Diretta DevSecOps (DSO) di Ginevra
-        </div>
-        <div class="pill">
-          <div class="pill-status"></div>
-          <span>Secp256k1 Signed Block #23</span>
-        </div>
-      </div>
-      <p style="color: #e2e8f0; font-size: 0.95rem;">
-        Pannello di controllo della sicurezza, verifica delle chiavi e dialogo diretto con l'Auditor DevSecOps (DSO) di Ginevra.
+    <!-- PASSWORD AUTHENTICATION OVERLAY MODAL -->
+    <div id="dso-auth-overlay" class="card col-12" style="background: rgba(10, 15, 30, 0.95); border-color: var(--accent-magenta); text-align: center; padding: 3rem 1.5rem; box-shadow: 0 0 40px rgba(255,0,127,0.3);">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🔒</div>
+      <h2 style="color: #fff; margin-bottom: 0.5rem;">Accesso Riservato DevSecOps (DSO)</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Questa console gestisce i parametri di sicurezza e le chiavi del sistema. Inserisci la password per accedere.
       </p>
+
+      <div style="max-width: 360px; margin: 0 auto;">
+        <input type="password" id="dso-password-input" placeholder="Password DSO (es. ginevra)" style="width: 100%; padding: 0.8rem; background: rgba(0,0,0,0.6); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-size: 1rem; text-align: center; margin-bottom: 1rem;" onkeypress="if(event.key==='Enter') authenticateDSO()">
+        
+        <button class="btn" style="width: 100%; justify-content: center; font-size: 1rem;" onclick="authenticateDSO()">🔓 Sblocca Console DSO</button>
+        
+        <div id="dso-auth-error" style="color: var(--accent-magenta); font-size: 0.85rem; margin-top: 0.8rem; display: none;"></div>
+      </div>
     </div>
 
-    <!-- DSO Interactive Console & Terminal -->
-    <div class="card col-12">
-      <div class="card-header">
-        <div class="card-title">
-          <span>💬</span> Console di Dialogo Diretto DSO Ginevra
+    <!-- DSO CONSOLE CONTENT (Hidden until authenticated) -->
+    <div id="dso-console-content" style="display: none; width: 100%;">
+      <div class="card col-12" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(121, 40, 202, 0.2)); border-color: var(--accent-cyan);">
+        <div class="card-header">
+          <div class="card-title" style="font-size: 1.3rem;">
+            <span>🛡️</span> Console Autenticata DevSecOps (DSO) di Ginevra
+          </div>
+          <div class="pill">
+            <div class="pill-status"></div>
+            <span>Password Verified & Secp256k1 Signed</span>
+          </div>
         </div>
+        <p style="color: #e2e8f0; font-size: 0.95rem;">
+          Pannello protetto di controllo della sicurezza, verifica delle chiavi e dialogo diretto con l'Auditor DevSecOps (DSO) di Ginevra.
+        </p>
       </div>
 
-      <div id="dso-terminal-output" style="width: 100%; height: 320px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow); padding: 1rem; overflow-y: auto; margin-bottom: 1rem;"></div>
+      <div class="card col-12">
+        <div class="card-header">
+          <div class="card-title">
+            <span>💬</span> Console di Dialogo Diretto DSO Ginevra
+          </div>
+        </div>
 
-      <div style="display: flex; gap: 0.75rem;">
-        <input type="text" id="dso-input-text" placeholder="Scrivi un messaggio o comando per il DSO di Ginevra (es. 'status', 'verify', 'chiave', 'regola')..." style="flex: 1; padding: 0.75rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.9rem;" onkeypress="if(event.key==='Enter') sendDSOMessage()">
-        <button class="btn" onclick="sendDSOMessage()">💬 Invia al DSO</button>
+        <div id="dso-terminal-output" style="width: 100%; height: 320px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow); padding: 1rem; overflow-y: auto; margin-bottom: 1rem;"></div>
+
+        <div style="display: flex; gap: 0.75rem;">
+          <input type="text" id="dso-input-text" placeholder="Scrivi un messaggio o comando per il DSO di Ginevra (es. 'status', 'verify', 'chiave', 'regola')..." style="flex: 1; padding: 0.75rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.9rem;" onkeypress="if(event.key==='Enter') sendDSOMessage()">
+          <button class="btn" onclick="sendDSOMessage()">💬 Invia al DSO</button>
+        </div>
       </div>
     </div>
 
