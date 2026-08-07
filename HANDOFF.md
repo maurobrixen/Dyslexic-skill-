@@ -1,13 +1,13 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-08 00:20:57  
+**Data/Ora**: 2026-08-08 00:21:49  
 **Branch Git**: `main`  
-**Ultimo Commit**: `b800d2f feat(self-improvement): add SELF_IMPROVEMENT_ENGINE.md and warm Italian voice tuning`
+**Ultimo Commit**: `5e18ba5 release(ginevra-core): distilled unbloated ginevra core package with secp256k1 & visual thought engine`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: release(ginevra-core): distilled unbloated ginevra core package with secp256k1 & visual thought engine
+- **Obiettivo**: release(universal): universal 1-click ginevra core installer for all devices
 - **Stato**: In corso / Pronto per ripresa
 
 ---
@@ -25,8 +25,7 @@
 ## 📂 4. Stato dei File
 ```text
 M SESSION_STATE.md
-?? .ginevra_key
-?? ginevra_core/
+?? ginevra_installer.py
 ```
 
 ---
