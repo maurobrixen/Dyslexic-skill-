@@ -1,13 +1,13 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-08 00:28:09  
+**Data/Ora**: 2026-08-08 00:29:35  
 **Branch Git**: `main`  
-**Ultimo Commit**: `edced28 release(second-chance): brand society simulation as Second Chance project`
+**Ultimo Commit**: `ff27671 release(second-change): align spelling and concept to Second Change (Il Secondo Cambiamento)`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: release(second-change): align spelling and concept to Second Change (Il Secondo Cambiamento)
+- **Obiettivo**: feat(kpis): integrate live KPI dashboard for Second Change Prime Directive compliance
 - **Stato**: In corso / Pronto per ripresa
 
 ---
@@ -27,6 +27,7 @@
 M SESSION_STATE.md
  M ginevra_civitas_simulator/civitas_engine.py
  M web_app/civitas.html
+ M web_app/civitas_app.js
 ```
 
 ---

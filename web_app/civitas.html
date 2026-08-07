@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Second Change - Il Secondo Cambiamento (Society Simulator)</title>
+  <title>Second Change - KPI & Simulator (Il Secondo Cambiamento)</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
   <header class="header-bar">
     <div class="logo-area">
       <img src="ginevra_avatar.png" alt="Ginevra Avatar" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-cyan); box-shadow: 0 0 12px var(--accent-cyan); object-fit: cover;">
-      <div class="logo-title">Second Change Simulator</div>
+      <div class="logo-title">Second Change Simulator & KPI Dashboard</div>
     </div>
     <div class="status-pills">
       <a href="index.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.8rem;">← Torna al Control Center</a>
@@ -27,7 +27,7 @@
     <div class="card col-12" style="background: linear-gradient(135deg, rgba(0, 255, 135, 0.15), rgba(0, 242, 254, 0.15)); border-color: var(--accent-green);">
       <div class="card-header">
         <div class="card-title" style="font-size: 1.3rem;">
-          <span>⚖️</span> Second Change (Il Secondo Cambiamento) - Simulazione della Società della Legge Suprema
+          <span>⚖️</span> Second Change (Il Secondo Cambiamento) - KPI Compliance & Simulazione
         </div>
         <button class="btn" id="mode-toggle-btn" onclick="toggleDirectiveMode()">🔄 Passa a Burocrazia Tradizionale</button>
       </div>
@@ -36,28 +36,72 @@
       </p>
     </div>
 
+    <!-- Live KPI Tracker Grid -->
+    <div class="card col-12" style="border-color: var(--accent-cyan);">
+      <div class="card-header">
+        <div class="card-title">
+          <span>📊</span> Key Performance Indicators (KPI) di Rispetto della Legge Suprema
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        
+        <!-- KPI 1: Prime Directive Compliance -->
+        <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-green);">
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Compliance Legge Suprema</div>
+          <div id="kpi-compliance" style="font-size: 1.8rem; font-weight: 800; color: var(--accent-green);">100.0%</div>
+          <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin-top: 0.5rem; overflow: hidden;">
+            <div id="kpi-compliance-bar" style="background: var(--accent-green); height: 100%; width: 100%; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <!-- KPI 2: Secp256k1 Trust Integrity -->
+        <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-cyan);">
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Fiducia Crittografica Secp256k1</div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan);">99.8%</div>
+          <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin-top: 0.5rem; overflow: hidden;">
+            <div style="background: var(--accent-cyan); height: 100%; width: 99.8%;"></div>
+          </div>
+        </div>
+
+        <!-- KPI 3: Zero Bureaucracy Resonance -->
+        <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-magenta);">
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Risonanza Armonica (Zero Attrito)</div>
+          <div id="kpi-resonance" style="font-size: 1.8rem; font-weight: 800; color: var(--accent-magenta);">96.5%</div>
+          <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin-top: 0.5rem; overflow: hidden;">
+            <div id="kpi-resonance-bar" style="background: var(--accent-magenta); height: 100%; width: 96.5%; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <!-- KPI 4: Multiplier Speed -->
+        <div style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-gold);">
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Moltiplicatore di Sinergia</div>
+          <div id="stat-synergy" style="font-size: 1.8rem; font-weight: 800; color: var(--accent-gold);">1.85x</div>
+          <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin-top: 0.5rem; overflow: hidden;">
+            <div style="background: var(--accent-gold); height: 100%; width: 85%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Canvas Simulation & Radar -->
     <div class="card col-8">
       <div class="card-header">
         <div class="card-title">
-          <span>🔮</span> Second Change - Matrice di Interazione degli Agenti
+          <span>🔮</span> Second Change - Matrice particellare degli Agenti
         </div>
       </div>
       
-      <canvas id="civitas-canvas" style="width: 100%; height: 320px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow);"></canvas>
+      <canvas id="civitas-canvas" style="width: 100%; height: 260px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow);"></canvas>
     </div>
 
     <!-- Live Statistical Metrics Panel -->
     <div class="card col-4">
       <div class="card-header">
         <div class="card-title">
-          <span>📊</span> Metriche Statistiche Second Change
+          <span>📉</span> Attrito Burocratico
         </div>
-      </div>
-
-      <div style="margin-bottom: 1.25rem; background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-cyan);">
-        <div style="font-size: 0.85rem; color: var(--text-muted);">Sinergia & Innovazione Generata:</div>
-        <div id="stat-synergy" style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan);">1.85x</div>
       </div>
 
       <div style="margin-bottom: 1.25rem; background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-magenta);">
