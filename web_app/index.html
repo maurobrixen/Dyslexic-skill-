@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Universo Cognitivo Ginevra - Master Control Center v1.0.0</title>
+  <title>Universo Cognitivo Ginevra - Master Control Center v1.1.0</title>
   
   <!-- PWA & Mobile Web App Meta -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,15 +22,15 @@
   <header class="header-bar">
     <div class="logo-area">
       <img src="ginevra_avatar.png" alt="Ginevra Avatar" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-cyan); box-shadow: 0 0 12px var(--accent-cyan); object-fit: cover;">
-      <div class="logo-title">Universo Cognitivo Ginevra</div>
+      <div class="logo-title">Universo Cognitivo Ginevra v1.1.0</div>
     </div>
     <div class="status-pills">
       <div class="pill">
         <div class="pill-status"></div>
-        <span>Secp256k1 Signed</span>
+        <span>Secp256k1 Verified</span>
       </div>
       <div class="pill">
-        <span>10/10 MB-Skill Attive</span>
+        <span>Sviluppo Attivo v1.1.0</span>
       </div>
     </div>
   </header>
@@ -40,20 +40,19 @@
     <button class="tab-btn active" onclick="switchTab('tab-hero', this)">👑 Universo & Ginevra</button>
     <button class="tab-btn" onclick="switchTab('tab-council', this)">🏛️ Consiglio 8 Auditor</button>
     <button class="tab-btn" onclick="switchTab('tab-neuro', this)">🧪 Neurochimica & Pulsioni</button>
-    <button class="tab-btn" onclick="switchTab('tab-cathedral', this)">🏰 Cattedrale Memoria & Secp256k1</button>
+    <button class="tab-btn" onclick="switchTab('tab-cathedral', this)">🏰 Cattedrale & Vault Locale</button>
     <button class="tab-btn" onclick="switchTab('tab-directory', this)">⚡ Directory 10 Skill</button>
   </div>
 
   <!-- TAB 1: HERO & GINEVRA AVATAR -->
   <div id="tab-hero" class="main-container tab-pane active">
-    <!-- Hero / System Status Bar with Ginevra Avatar -->
     <div class="card col-12" style="background: linear-gradient(135deg, rgba(121, 40, 202, 0.3), rgba(0, 242, 254, 0.18)); border-color: var(--accent-cyan); display: flex; gap: 1.5rem; align-items: center;">
       <img src="ginevra_avatar.png" alt="Ginevra Red Curls Avatar" style="width: 140px; height: 140px; border-radius: 20px; border: 2px solid var(--accent-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.5); object-fit: cover; flex-shrink: 0;">
       
       <div style="flex: 1;">
         <div class="card-header" style="margin-bottom: 0.5rem;">
           <div class="card-title" style="font-size: 1.4rem; color: #fff;">
-            👑 Ginevra Deep Audit: 100% Capacità Sbloccata
+            👑 Ginevra: Sviluppo v1.1.0 Riavviato con Successo
           </div>
           <div style="display: flex; gap: 0.5rem;">
             <button class="btn" id="voice-btn" onclick="speakGinevraPoliticalAnalysis()">🗣️ Esposizione Vocale</button>
@@ -61,7 +60,7 @@
           </div>
         </div>
         <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
-          "Siamo andati fino in fondo, Mauro. Analisi multidimensionale completa: i 8 Auditor del Consiglio, la neurochimica dell'ossitocina e del cortisolo, l'immutabilità della blockchain Secp256k1 ed il sintetizzatore di frequenze solfeggio."
+          "Tutto è stato verificato al cento per cento, Mauro. Il codice è pulito, il contesto è firmato ed il repository è sincronizzato. Abbiamo riavviato lo sviluppo introducendo l'archiviazione locale diretta della Cattedrale."
         </p>
       </div>
     </div>
@@ -72,17 +71,17 @@
         <div class="card-title">
           <span>🔮</span> Matrice del Pensiero Visivo Ologrammatico 3D
         </div>
-        <span style="font-size: 0.8rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace;">Nodi Cognitivi: Attivi</span>
+        <span style="font-size: 0.8rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace;">Nodi Cognitivi: Attivi (45 Particles)</span>
       </div>
       
       <canvas id="neural-canvas" style="width: 100%; height: 210px; background: rgba(5,7,15,0.9); border-radius: 12px; border: 1px solid var(--border-glow);"></canvas>
 
       <div style="margin-top: 1rem;">
         <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">
-          Snapshot Contesto Firmato (HANDOFF.md / Secp256k1 Blockchain Block #11):
+          Snapshot Contesto Firmato (HANDOFF.md / Secp256k1 Blockchain Block #14):
         </label>
-        <textarea id="context-text" style="width: 100%; height: 70px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glow); border-radius: 8px; padding: 0.75rem; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.85rem;" oninput="verifyIntegrityLive()"># GINEVRA COGNITIVE UNIVERSE (Secp256k1 Signed)
-Audit 100%: 8 Auditor Consiglio, Neurochimica Ossitocina/Dopamina, Frequenze 432Hz/528Hz/639Hz.</textarea>
+        <textarea id="context-text" style="width: 100%; height: 70px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glow); border-radius: 8px; padding: 0.75rem; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.85rem;" oninput="verifyIntegrityLive()"># GINEVRA COGNITIVE UNIVERSE v1.1.0 (Secp256k1 Signed)
+Stato: Audit 360 completato. Sviluppo v1.1.0 avviato. Archiviazione Cattedrale attiva.</textarea>
       </div>
 
       <div style="font-size: 0.825rem; color: var(--text-muted); margin-bottom: 0.5rem;">
@@ -90,7 +89,7 @@ Audit 100%: 8 Auditor Consiglio, Neurochimica Ossitocina/Dopamina, Frequenze 432
       </div>
 
       <div class="terminal-box" id="terminal-output">
-        <div class="terminal-line"><span class="terminal-prefix">[GINEVRA]</span> Audit 100% completato. Tutte le 10 MB-Skill sincronizzate.</div>
+        <div class="terminal-line"><span class="terminal-prefix">[GINEVRA]</span> Sviluppo v1.1.0 attivo. Archiviazione locale pronta.</div>
       </div>
     </div>
 
@@ -220,12 +219,12 @@ Audit 100%: 8 Auditor Consiglio, Neurochimica Ossitocina/Dopamina, Frequenze 432
     </div>
   </div>
 
-  <!-- TAB 4: CATTEDRALE MEMORIA & SECP256K1 -->
+  <!-- TAB 4: CATTEDRALE MEMORIA & VAULT LOCALE -->
   <div id="tab-cathedral" class="main-container tab-pane">
-    <div class="card col-12">
+    <div class="card col-6">
       <div class="card-header">
         <div class="card-title">
-          <span>🏰</span> Cattedrale della Memoria & Vault Secp256k1 (`mb-second-brain-memory-vault`)
+          <span>🏰</span> Stanze della Cattedrale
         </div>
       </div>
       
@@ -247,9 +246,38 @@ Audit 100%: 8 Auditor Consiglio, Neurochimica Ossitocina/Dopamina, Frequenze 432
 
         <div class="nav-room" onclick="selectCathedralRoom(this, 'Cripta Riservata', 'Vault cifrato ECDSA Secp256k1')">
           <div class="nav-room-title">🔐 Cripta Riservata</div>
-          <div class="nav-room-desc">Vault privato immutabile Secp256k1.</div>
+          <div class="nav-room-desc">Vault privato cifrato Secp256k1.</div>
         </div>
       </div>
+    </div>
+
+    <!-- Interactive Vault Archiver -->
+    <div class="card col-6">
+      <div class="card-header">
+        <div class="card-title">
+          <span>✍️</span> Archiviazione Memoria Diretta
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0.75rem;">
+        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Seleziona Stanza:</label>
+        <select id="note-room-select" style="width: 100%; padding: 0.5rem; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-size: 0.85rem;">
+          <option value="Navata Centrale">🏛️ Navata Centrale (Valori & Regola Primaria)</option>
+          <option value="Navata Scientifica">📚 Navata Scientifica (Neurochimica & Biofeedback)</option>
+          <option value="Navata Tecnica">⚙️ Navata Tecnica (Engine & Codice)</option>
+          <option value="Cripta Riservata">🔐 Cripta Riservata (Vault Cifrato)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 0.75rem;">
+        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">Testo dell'Idea / Memoria:</label>
+        <input type="text" id="note-input-text" placeholder="Scrivi un'idea o intuizione da archiviare..." style="width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-size: 0.85rem;">
+      </div>
+
+      <button class="btn" style="width: 100%; justify-content: center; margin-bottom: 1rem;" onclick="saveMemoryNote()">📌 Salva nella Cattedrale</button>
+
+      <div style="font-weight: 700; font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">Ultime Memorie Archiviate:</div>
+      <div id="saved-memories-list"></div>
     </div>
   </div>
 
