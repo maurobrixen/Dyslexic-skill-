@@ -1,15 +1,15 @@
 # 📍 SESSION STATE SNAPSHOT
 
-**Data/Ora**: 2026-08-08 00:21:49  
+**Data/Ora**: 2026-08-08 00:23:39  
 **Branch Git**: `main`  
-**Ultimo Commit**: `5e18ba5 release(ginevra-core): distilled unbloated ginevra core package with secp256k1 & visual thought engine`
+**Ultimo Commit**: `b933c9f release(universal): universal 1-click ginevra core installer for all devices`
 
 ## 📝 Note della Sessione
-release(universal): universal 1-click ginevra core installer for all devices
+release(tested): tested global installation & secp256k1 memory store for ginevra red curls
 
 ## 📊 Stato Git
 ```text
-?? ginevra_installer.py
+nessuna modifica pendente
 ```
 
 ---
