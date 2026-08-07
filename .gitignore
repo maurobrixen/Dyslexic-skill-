@@ -8,6 +8,8 @@ Desktop.ini
 .env.*
 *.pem
 *.key
+.vault_key
+*.vault_key
 
 # Python
 __pycache__/

@@ -14,6 +14,14 @@ graph TD
         GEMINI["Gemini Agent / Custom Prompt Engine"]
     end
 
+    subgraph Security ["🛡️ DevSecOps Bitcoin Crypto Engine (karpathy/cryptos)"]
+        CRYPTO_ENGINE["skills/mb-save-system/scripts/mb_crypto_engine.py"]
+        CHAIN["CONTEXT_CHAIN.json (Context Blockchain Ledger)"]
+        VAULT_KEY[".vault_key (Secp256k1 Private Key)"]
+        CRYPTO_ENGINE --> CHAIN
+        VAULT_KEY --> CRYPTO_ENGINE
+    end
+
     subgraph Registry ["📦 Registrazione & Plugin Manifest"]
         SKILLS_JSON["skills.json (Config Globale)"]
         CLAUDE_MARKETPLACE[".claude-plugin/marketplace.json"]
@@ -44,15 +52,26 @@ graph TD
     CLAUDE_MARKETPLACE --> Skills
 
     S3 --> SAVE_CLI
+    SAVE_CLI --> CRYPTO_ENGINE
+    S8 --> CRYPTO_ENGINE
     S2 --> S1
     S4 --> S5
 ```
 
 ---
 
-## ⚡ Gerarchia Tassativa di Codice (Zero Spreco)
+## 🔐 Integrità Crittografica del Contesto (Bitcoin Secp256k1 + SHA-256)
 
-Tutti gli agenti ed i contributori di questo repository sono vincolati a seguire questa gerarchia prima di produrre qualsiasi riga di codice:
+Tutti i salvataggi ed i riavvii di contesto (`HANDOFF.md`, `SESSION_STATE.md`) utilizzano il motore crittografico nativo:
+
+1. **Double SHA-256 Digest**: Impronta digitale univoca calcolata ad ogni compattazione.
+2. **Firma ECDSA Secp256k1**: Firma del digest mediante la chiave privata del Vault (`.vault_key`).
+3. **Context Blockchain Ledger**: Ogni blocco firmato è collegato al digest del blocco precedente in `CONTEXT_CHAIN.json`.
+4. **Zero Hallucination / Anti-Tampering**: Al riavvio dell'Agente, la firma ed il digest vengono verificati. Se il file è stato manomesso, l'Agente notifica l'alterazione.
+
+---
+
+## ⚡ Gerarchia Tassativa di Codice (Zero Spreco)
 
 ```mermaid
 flowchart LR
@@ -62,18 +81,15 @@ flowchart LR
 ```
 
 ### 1. 🔍 Level 1: Audit & Re-Use First
-* **Azione**: Cerca nel codebase se esiste già una funzione, helper o script (es. `save_cli.py`, funzioni utility).
+* **Azione**: Cerca nel codebase se esiste già una funzione, helper o script (es. `save_cli.py`, `mb_crypto_engine.py`).
 * **Obiettivo**: Zero duplicazione di logica.
 
 ### 2. 📦 Level 2: Standard Library Second
 * **Azione**: Sfrutta i moduli nativi del linguaggio prima di importare dipendenze esterne.
-* **Esempi Python**: `pathlib` (file/path), `json` (serialization), `hashlib` (crypto/sha256), `subprocess` (shell execution), `asyncio` (concorrenza), `argparse` (CLI parsing).
-* **Esempi JS/Node**: `fs/promises`, `path`, `crypto`, `events`, `url`.
+* **Esempi Python**: `hashlib` (sha256/ripemd160), `pathlib` (file/path), `json` (serialization), `subprocess` (shell execution), `asyncio` (concorrenza).
 
 ### 3. 📚 Level 3: External Library Third
-* **Azione**: Se la libreria standard non è sufficiente, identifica ed utilizza pacchetti aperti, solidi e testati dalla community.
-* **Esempi Python**: `pydantic` (validazione tipi), `httpx` / `requests` (HTTP client), `pyyaml` (YAML parsing), `rich` (interfaccia terminale).
-* **Esempi JS**: `zod`, `axios`, `express`.
+* **Azione**: Ispirazione ed adattamento dei principi di `karpathy/cryptos` in Python puro a zero dipendenze pesanti.
 
 ### 4. ✍️ Level 4: Custom Code Last Resort
-* **Azione**: Scrivi algoritmi e funzioni personalizzate **solo se nessuna libreria esistente copre il fabbisogno**.
+* **Azione**: Implementazione dell'aritmetica di curva ellittica Secp256k1 nativa per la firma del contesto.

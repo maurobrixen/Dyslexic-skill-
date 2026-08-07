@@ -1,30 +1,31 @@
-# 📑 HANDOFF SESSION STATE (Token Optimized)
+# 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-07 23:46:00  
+**Data/Ora**: 2026-08-07 23:52:00  
 **Branch Git**: `main`  
-**Ultimo Commit / Modifica**: `feat: add ARCHITECTURE_MAP.md & Zero-Waste Code Hierarchy rules`
+**Ultimo Commit / Modifica**: `feat(crypto): integrate Secp256k1 double SHA-256 context engine inspired by karpathy/cryptos`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: Riprogettazione architetturale del repository coordinata dal **CAPO Council Planner**, con integrazione della Gerarchia di Codice a Zero Spreco (Re-use First -> Standard Library -> External Library -> Custom Code).
-- **Stato**: Mappa architetturale `ARCHITECTURE_MAP.md` creata, manifest `.claude-plugin` aggiornati e pubblicati su GitHub, `README.md` aggiornato.
+- **Obiettivo**: Riprogettazione totale dell'architettura di sicurezza del contesto con audit dell'Agente DevSecOps IT ed integrazione di crittografia a livello Bitcoin ispirata a `karpathy/cryptos`.
+- **Stato**: Motore crittografico `mb_crypto_engine.py` creato e testato al 100%, `save_cli.py` integrato con firma ECDSA Secp256k1 e registro `CONTEXT_CHAIN.json`, `.gitignore` aggiornato.
 
 ---
 
 ## 💡 2. Decisioni Architetturali & Regole
-- 🔍 **RE-USE FIRST**: Audit prioritario di funzioni e script esistenti (`save_cli.py`).
-- 📦 **STANDARD LIB SECOND**: Uso di moduli Python/JS nativi (`pathlib`, `json`, `subprocess`, `asyncio`).
-- 📚 **EXTERNAL LIB THIRD**: Adozione di librerie esterne collaudate solo se la libreria standard non basta.
-- ✍️ **CUSTOM CODE LAST RESORT**: Codice su misura solo ed esclusivamente come extrema ratio.
+- 🛡️ **Secp256k1 & Double SHA-256**: Firma crittografica deterministica di ogni snapshot di contesto `HANDOFF.md`.
+- 🔗 **Context Blockchain Ledger**: Ogni salvataggio genera un blocco collegato al precedente in `CONTEXT_CHAIN.json` (`prev_hash`).
+- 🔐 **Protezione Vault**: Chiave privata in `.vault_key` protetta in `.gitignore`.
+- 🔍 **Re-Use First & Zero Dipendenze C**: Codice in Python puro esente da librerie binarie esterne instabili.
 
 ---
 
 ## 🔄 3. Task Completati
-- [x] Creazione di `.claude-plugin/marketplace.json` e `plugin.json` compatibili con Claude Code.
-- [x] Push del repository come Marketplace Pubblico su GitHub (`maurobrixen/Dyslexic-skill-`).
-- [x] Generazione della Mappa Concettuale 3D `ARCHITECTURE_MAP.md`.
-- [x] Integrazione della Gerarchia di Codice in `README.md`.
+- [x] Sviluppo di `mb_crypto_engine.py` (Aritmetica di curva ellittica Secp256k1 nativa, Double SHA-256, ECDSA sign/verify).
+- [x] Integrazione di `save_cli.py` per la firma ed il controllo di integrità di `HANDOFF.md`.
+- [x] Generazione del registro a catena di blocchi `CONTEXT_CHAIN.json`.
+- [x] Esclusione delle chiavi private in `.gitignore`.
+- [x] Aggiornamento di `ARCHITECTURE_MAP.md`, `README.md`, `HANDOFF.md` e `SESSION_STATE.md`.
 
 ---
 
@@ -33,11 +34,17 @@
 M README.md
 M HANDOFF.md
 M SESSION_STATE.md
-?? ARCHITECTURE_MAP.md
+M ARCHITECTURE_MAP.md
+M .gitignore
+M skills/mb-save-system/scripts/save_cli.py
+?? skills/mb-save-system/scripts/mb_crypto_engine.py
+?? CONTEXT_CHAIN.json
 ```
 
 ---
 
 ## 🚀 5. Prossimi Passi per il Riavvio
-1. Eseguire l'audit specifico su singole skill quando viene richiesta una nuova funzione.
-2. Applicare la sincronizzazione Git via `/mb salva-push` o `save_cli.py`.
+1. Verificare l'integrità del contesto in qualsiasi momento con:
+   `python skills/mb-save-system/scripts/save_cli.py verify`
+2. Salvare e firmare la sessione corrente con:
+   `python skills/mb-save-system/scripts/save_cli.py compact`

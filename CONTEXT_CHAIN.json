@@ -1,0 +1,32 @@
+[
+  {
+    "file": "HANDOFF.md",
+    "timestamp": "2026-08-07 23:51:55",
+    "hash256": "11702e8d4a7c24b1cdc962cd406604844b30ceeb0f61b1eb054296cc39668576",
+    "pubkey": {
+      "x": "0x71cb075e294da923e4ef281884b1031b0ce00fe075b513aa52c6af1cd6986e43",
+      "y": "0xd2e95dc090c6d2e40fa4f47a7a9ff9732d0a9b87884615329a0e6b0d4d5e6dfe"
+    },
+    "signature": {
+      "r": "0x4cc65acd1068a57c0efe9b5392d6827b0f5564a381f69c73a34750f4a28dd56a",
+      "s": "0x1bd2c1949cdcb16307a47070e18d3382911696e7f73b80cb0067311988ce3cc0"
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "block_index": 1
+  },
+  {
+    "file": "HANDOFF.md",
+    "timestamp": "2026-08-07 23:52:03",
+    "hash256": "799e82dbf905dfbd41119b0381c59c898cc196cd261473cfd721ff8f35773fe5",
+    "pubkey": {
+      "x": "0x71cb075e294da923e4ef281884b1031b0ce00fe075b513aa52c6af1cd6986e43",
+      "y": "0xd2e95dc090c6d2e40fa4f47a7a9ff9732d0a9b87884615329a0e6b0d4d5e6dfe"
+    },
+    "signature": {
+      "r": "0x2f81725dcd075c2fdc4c34eee7fe17dc1686f3837c2d867e3affc136ce9e355a",
+      "s": "0x3be4e8d02ff15cc640fde040aca2ce62dfcfa24da1c86d497636b834df3a810d"
+    },
+    "prev_hash": "11702e8d4a7c24b1cdc962cd406604844b30ceeb0f61b1eb054296cc39668576",
+    "block_index": 2
+  }
+]
