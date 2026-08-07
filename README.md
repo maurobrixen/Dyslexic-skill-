@@ -26,6 +26,18 @@
 
 ---
 
+### 🧠 Gerarchia Tassativa di Sviluppo (Zero Spreco)
+
+Tutte le modifiche ed il codice sviluppato in questo repository seguono la regola d'oro in 4 livelli:
+1. 🔍 **RE-USE FIRST**: Audit del codice e degli script esistenti (`save_cli.py`, ecc.) per riutilizzare funzioni già pronte.
+2. 📦 **STANDARD LIB SECOND**: Utilizzo prioritario dei moduli della libreria standard (`pathlib`, `json`, `subprocess`, `asyncio`, `hashlib`).
+3. 📚 **EXTERNAL LIB THIRD**: Adozione di librerie esterne collaudate solo se la libreria standard non soddisfa i requisiti.
+4. ✍️ **CUSTOM CODE LAST RESORT**: Scrittura di codice personalizzato ex-novo **solo ed esclusivamente come extrema ratio**.
+
+> 🕸️ **Mappa Concettuale 3D**: Consulta il file [**ARCHITECTURE_MAP.md**](./ARCHITECTURE_MAP.md) per il grafo della conoscenza Graphify completo dell'ecosistema.
+
+---
+
 ### 📂 Struttura del Repository
 
 ```text
