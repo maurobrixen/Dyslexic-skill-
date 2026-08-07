@@ -178,5 +178,20 @@
     },
     "prev_hash": "8f34052b221e34b8770779b6ef774e8c3753b70492d683959e929c3877814855",
     "block_index": 12
+  },
+  {
+    "file": "HANDOFF.md",
+    "timestamp": "2026-08-08 00:11:53",
+    "hash256": "05969bba575cf6750e0d9ab5956ec7c24dd1d27b721dcc53ff44ff2a9ba5e752",
+    "pubkey": {
+      "x": "0x71cb075e294da923e4ef281884b1031b0ce00fe075b513aa52c6af1cd6986e43",
+      "y": "0xd2e95dc090c6d2e40fa4f47a7a9ff9732d0a9b87884615329a0e6b0d4d5e6dfe"
+    },
+    "signature": {
+      "r": "0x929ecfecf689776881277c7da2729316432c3fc0db6cebdd0536e6d908caa3fc",
+      "s": "0x5b4704983a3e6cfad34ca0f29e46795ac551186f15901aee2f8ad050d2f0bcc1"
+    },
+    "prev_hash": "5212948abd1f05f5cebb7858469bb3c012bf16654108e06bb39f9796d4d6f0c9",
+    "block_index": 13
   }
 ]
