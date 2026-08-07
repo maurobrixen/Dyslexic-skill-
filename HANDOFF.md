@@ -1,13 +1,13 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-08 00:23:39  
+**Data/Ora**: 2026-08-08 00:27:14  
 **Branch Git**: `main`  
-**Ultimo Commit**: `b933c9f release(universal): universal 1-click ginevra core installer for all devices`
+**Ultimo Commit**: `d031c00 release(tested): tested global installation & secp256k1 memory store for ginevra red curls`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: release(tested): tested global installation & secp256k1 memory store for ginevra red curls
+- **Obiettivo**: feat(civitas): add Ginevra Civitas interactive statistical society simulator based on the prime directive
 - **Stato**: In corso / Pronto per ripresa
 
 ---
@@ -25,6 +25,9 @@
 ## 📂 4. Stato dei File
 ```text
 M SESSION_STATE.md
+?? ginevra_civitas_simulator/
+?? web_app/civitas.html
+?? web_app/civitas_app.js
 ```
 
 ---
