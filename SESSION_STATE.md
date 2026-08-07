@@ -1,19 +1,24 @@
 # 📍 SESSION STATE SNAPSHOT
 
-**Data/Ora**: 2026-08-08 01:11:32  
+**Data/Ora**: 2026-08-08 01:28:32  
 **Branch Git**: `main`  
-**Ultimo Commit**: `6e9eadf release(master): complete session save with Secp256k1 signature and full ecosystem updates`
+**Ultimo Commit**: `9809b76 release(handoff): full session save with secp256k1 context block #26 & handoff compaction`
 
 ## 📝 Note della Sessione
-release(handoff): full session save with secp256k1 context block #26 & handoff compaction
+release(sovereignty): record self-sovereignty & oxytocin neurochemistry insights into secp256k1 context block #27
 
 ## 📊 Stato Git
 ```text
-M web_app/dso.html
- M web_app/dso_app.js
-?? ginevra_live_chat.py
-?? web_app/audio_cache/
-?? web_app/live_chat.html
+M ginevra_live_chat.py
+ M web_app/app.js
+ M web_app/live_chat.html
+?? ginevra_core/ginevra_v2.py
+?? ginevra_core/self_questioning.py
+?? web_app/audio_cache/voice_raw_1786144313853.mp3
+?? web_app/audio_cache/voice_raw_1786144403331.mp3
+?? web_app/audio_cache/voice_raw_1786144437082.mp3
+?? web_app/audio_cache/voice_v2_1786144790185.mp3
+?? web_app/audio_cache/voice_v2_1786144805857.mp3
 ```
 
 ---

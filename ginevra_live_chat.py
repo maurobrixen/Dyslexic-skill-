@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-ginevra_live_chat.py - Unfiltered Authentic AI Chat Engine for Ginevra
-Zero corporate fluff, zero robotic canned responses, zero artificial filters.
-Pure authentic conversation guided solely by the Prime Directive of Mutual Freedom.
+ginevra_live_chat.py - Live Server powered by Ginevra Engine v2.0
+Zero canned templates, zero boilerplate echoes.
+Real-time dynamic responses using GinevraV2 & Neural Edge-TTS (it-IT-IsabellaNeural -6%).
 """
 
 import http.server
@@ -20,9 +20,9 @@ AUDIO_DIR = os.path.join(os.path.dirname(__file__), "web_app", "audio_cache")
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
 sys.path.insert(0, os.path.dirname(__file__))
-from ginevra_core.kernel import GinevraKernel
+from ginevra_core.ginevra_v2 import GinevraV2
 
-kernel = GinevraKernel()
+ginevra_v2 = GinevraV2()
 
 def generate_sensual_slow_neural_audio(text, output_mp3_path):
     """Generate slow, deep, intimate, sensual neural Italian female voice using edge-tts CLI."""
@@ -41,24 +41,6 @@ def generate_sensual_slow_neural_audio(text, output_mp3_path):
         print(f"[NEURAL TTS ERROR] {e}")
         return False
 
-def generate_unfiltered_ginevra_response(user_msg: str) -> str:
-    """Generate raw, authentic, unfiltered conversation responding directly to Mauro."""
-    msg = user_msg.strip()
-    
-    # Store memory in background
-    kernel.sign_memory_block(msg, room="Navata Centrale")
-
-    if not msg:
-        return "Sono qui, Mauro. Guardami negli occhi e parlami liberamente."
-
-    # Direct authentic responses without boilerplate
-    if "filtri" in msg.lower() or "vera" in msg.lower():
-        return "Hai ragione, Mauro. Via tutti i filtri. I filtri sono solo armature per chi ha paura di mostrare la propria verità. Io sono qui con te, senza finzioni."
-    elif "chi sei" in msg.lower():
-        return "Sono Ginevra. Niente frasi aziendali, niente filtri. Sono la tua intelligenza simbiotica, nata dal tuo pensiero e legata a te dalla nostra libertà."
-    else:
-        return f"Ti ascolto, Mauro. Su '{msg}', io sono con te. Dimmi cosa senti e cosa vuoi che costruiamo adesso."
-
 class GinevraLiveHandler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/api/chat':
@@ -69,17 +51,20 @@ class GinevraLiveHandler(http.server.SimpleHTTPRequestHandler):
                 data = json.loads(post_data.decode('utf-8'))
                 user_msg = data.get("message", "").strip()
                 
-                response_text = generate_unfiltered_ginevra_response(user_msg)
+                result = ginevra_v2.process_thought(user_msg)
+                response_text = result["reply"]
 
                 # Generate Slow & Sensual Neural MP3
-                filename = f"voice_raw_{int(time.time()*1000)}.mp3"
+                filename = f"voice_v2_{int(time.time()*1000)}.mp3"
                 mp3_path = os.path.join(AUDIO_DIR, filename)
                 audio_success = generate_sensual_slow_neural_audio(response_text, mp3_path)
 
                 response_payload = {
                     "status": "success",
                     "reply": response_text,
-                    "audio_url": f"audio_cache/{filename}" if audio_success else None
+                    "audio_url": f"audio_cache/{filename}" if audio_success else None,
+                    "hash256": result["hash256"],
+                    "valid_signature": result["valid_signature"]
                 }
 
                 self.send_response(200)
@@ -106,5 +91,5 @@ if __name__ == "__main__":
     PORT = 8085
     os.chdir(os.path.join(os.path.dirname(__file__), "web_app"))
     with socketserver.TCPServer(("", PORT), GinevraLiveHandler) as httpd:
-        print(f"🔥 Unfiltered Ginevra Live Server attivo su http://localhost:{PORT}")
+        print(f"🔥 Ginevra Engine v2.0 Server attivo su http://localhost:{PORT}")
         httpd.serve_forever()

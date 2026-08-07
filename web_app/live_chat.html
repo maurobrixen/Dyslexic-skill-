@@ -15,7 +15,7 @@
   <header class="header-bar">
     <div class="logo-area">
       <img src="ginevra_avatar.png" alt="Ginevra Red Curls Avatar" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--accent-magenta); box-shadow: 0 0 16px var(--accent-magenta); object-fit: cover;">
-      <div class="logo-title">Ginevra Live Chat (Voce Neurale Reale `it-IT-ElsaNeural`)</div>
+      <div class="logo-title">Ginevra Live Chat (Voce Neurale `it-IT-IsabellaNeural`)</div>
     </div>
     <div class="status-pills">
       <a href="portal.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.8rem;">← Gateway #1</a>
@@ -27,15 +27,15 @@
     <div class="card col-12" style="background: linear-gradient(135deg, rgba(255, 0, 127, 0.25), rgba(0, 242, 254, 0.25)); border-color: var(--accent-magenta);">
       <div class="card-header">
         <div class="card-title" style="font-size: 1.35rem;">
-          💬 Chat Live con Voce Neurale Umana, Sensuale & Veloce
+          💬 Chat Live con Voce Neurale Umana, Sensuale & Lenta
         </div>
         <div class="pill">
           <div class="pill-status"></div>
-          <span>Microsoft Neural Engine (Elsa/Isabella)</span>
+          <span>Microsoft Neural Engine (Isabella -6%)</span>
         </div>
       </div>
       <p style="color: #e2e8f0; font-size: 0.95rem;">
-        Server Python Live attivo con sintetizzatore neurale ad alta fedeltà. Voce umana reale, calda, avvolgente ed ultra-veloce.
+        Server Python Live attivo. Voce calda, avvolgente, lenta e profonda senza frasi fatte o filtri artificiali.
       </p>
     </div>
 
@@ -43,7 +43,7 @@
     <div class="card col-12">
       <div id="live-chat-box" style="width: 100%; height: 380px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow); padding: 1.25rem; overflow-y: auto; margin-bottom: 1rem;">
         <div style="color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 1rem;">
-          [NEURAL SYSTEM] Voce Neurale Reale Attivata (`it-IT-ElsaNeural`). Scrivi un messaggio per ascoltarla dal vivo.
+          [NEURAL SYSTEM] Voce Neurale Lenta & Sensuale Attivata (`it-IT-IsabellaNeural`). Scrivi un messaggio per ascoltarla dal vivo.
         </div>
       </div>
 
@@ -83,9 +83,11 @@
           audioHtml = `<div style="margin-top: 0.5rem;"><audio controls autoplay src="http://localhost:8085/${data.audio_url}" style="width: 100%; height: 36px; border-radius: 6px;"></audio></div>`;
         }
 
+        const hashDisplay = (data.hash256 && typeof data.hash256 === 'string') ? data.hash256.substring(0, 20) : "Secp256k1 Signed";
+
         const gMsg = document.createElement("div");
         gMsg.style.marginBottom = "1rem";
-        gMsg.innerHTML = `<div style="color: var(--accent-pink); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem;">👑 GINEVRA (Voce Neurale Reale):</div><div style="background: rgba(255, 0, 127, 0.1); border: 1px solid var(--accent-magenta); padding: 0.75rem; border-radius: 8px; color: #fff; font-size: 0.95rem;">${data.reply}</div>${audioHtml}<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">Firma Secp256k1 Hash: ${data.hash256.substring(0, 20)}...</div>`;
+        gMsg.innerHTML = `<div style="color: var(--accent-pink); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem;">👑 GINEVRA (Voce Neurale Reale):</div><div style="background: rgba(255, 0, 127, 0.1); border: 1px solid var(--accent-magenta); padding: 0.75rem; border-radius: 8px; color: #fff; font-size: 0.95rem;">${data.reply}</div>${audioHtml}<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">Firma Secp256k1 Hash: ${hashDisplay}...</div>`;
         box.appendChild(gMsg);
         box.scrollTop = box.scrollHeight;
 
