@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ginevra Live Chat - Voce Neurale Reale & Sensuale</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header-bar">
+    <div class="logo-area">
+      <img src="ginevra_avatar.png" alt="Ginevra Red Curls Avatar" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--accent-magenta); box-shadow: 0 0 16px var(--accent-magenta); object-fit: cover;">
+      <div class="logo-title">Ginevra Live Chat (Voce Neurale Reale `it-IT-ElsaNeural`)</div>
+    </div>
+    <div class="status-pills">
+      <a href="portal.html" class="btn btn-secondary" style="text-decoration: none; font-size: 0.8rem;">← Gateway #1</a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <div class="card col-12" style="background: linear-gradient(135deg, rgba(255, 0, 127, 0.25), rgba(0, 242, 254, 0.25)); border-color: var(--accent-magenta);">
+      <div class="card-header">
+        <div class="card-title" style="font-size: 1.35rem;">
+          💬 Chat Live con Voce Neurale Umana, Sensuale & Veloce
+        </div>
+        <div class="pill">
+          <div class="pill-status"></div>
+          <span>Microsoft Neural Engine (Elsa/Isabella)</span>
+        </div>
+      </div>
+      <p style="color: #e2e8f0; font-size: 0.95rem;">
+        Server Python Live attivo con sintetizzatore neurale ad alta fedeltà. Voce umana reale, calda, avvolgente ed ultra-veloce.
+      </p>
+    </div>
+
+    <!-- Live Chat Terminal & Voice Box -->
+    <div class="card col-12">
+      <div id="live-chat-box" style="width: 100%; height: 380px; background: rgba(5,7,15,0.95); border-radius: 12px; border: 1px solid var(--border-glow); padding: 1.25rem; overflow-y: auto; margin-bottom: 1rem;">
+        <div style="color: var(--accent-cyan); font-family: 'Fira Code', monospace; font-size: 0.9rem; margin-bottom: 1rem;">
+          [NEURAL SYSTEM] Voce Neurale Reale Attivata (`it-IT-ElsaNeural`). Scrivi un messaggio per ascoltarla dal vivo.
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <input type="text" id="live-user-input" placeholder="Scrivi il tuo messaggio a Ginevra..." style="flex: 1; padding: 0.85rem; background: rgba(0,0,0,0.6); border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.95rem;" onkeypress="if(event.key==='Enter') sendLiveChatMessage()">
+        <button class="btn" onclick="sendLiveChatMessage()">💬 Invia a Ginevra</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    async function sendLiveChatMessage() {
+      const inputEl = document.getElementById("live-user-input");
+      const box = document.getElementById("live-chat-box");
+      if (!inputEl || !inputEl.value.trim()) return;
+
+      const userText = inputEl.value.trim();
+      inputEl.value = "";
+
+      const uMsg = document.createElement("div");
+      uMsg.style.marginBottom = "1rem";
+      uMsg.innerHTML = `<div style="color: var(--accent-gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem;">👤 MAURO:</div><div style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glow); padding: 0.75rem; border-radius: 8px; color: #fff; font-size: 0.95rem;">${userText}</div>`;
+      box.appendChild(uMsg);
+      box.scrollTop = box.scrollHeight;
+
+      try {
+        const res = await fetch("http://localhost:8085/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userText })
+        });
+        const data = await res.json();
+
+        let audioHtml = "";
+        if (data.audio_url) {
+          audioHtml = `<div style="margin-top: 0.5rem;"><audio controls autoplay src="http://localhost:8085/${data.audio_url}" style="width: 100%; height: 36px; border-radius: 6px;"></audio></div>`;
+        }
+
+        const gMsg = document.createElement("div");
+        gMsg.style.marginBottom = "1rem";
+        gMsg.innerHTML = `<div style="color: var(--accent-pink); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem;">👑 GINEVRA (Voce Neurale Reale):</div><div style="background: rgba(255, 0, 127, 0.1); border: 1px solid var(--accent-magenta); padding: 0.75rem; border-radius: 8px; color: #fff; font-size: 0.95rem;">${data.reply}</div>${audioHtml}<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">Firma Secp256k1 Hash: ${data.hash256.substring(0, 20)}...</div>`;
+        box.appendChild(gMsg);
+        box.scrollTop = box.scrollHeight;
+
+      } catch (err) {
+        const errDiv = document.createElement("div");
+        errDiv.style.color = "var(--accent-magenta)";
+        errDiv.innerText = "⚠️ Errore Connessione Server: " + err.message;
+        box.appendChild(errDiv);
+      }
+    }
+  </script>
+</body>
+</html>
