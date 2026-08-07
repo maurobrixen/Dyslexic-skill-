@@ -1,16 +1,17 @@
 # 📍 SESSION STATE SNAPSHOT
 
-**Data/Ora**: 2026-08-01 16:26:51  
+**Data/Ora**: 2026-08-02 16:32:00  
 **Branch Git**: `master`  
-**Ultimo Commit**: `629fc95 Add mb-chembl-database skill to skills collection`
+**Ultimo Aggiornamento**: `Creata la guida dettagliata di installazione INSTALL.md`
 
 ## 📝 Note della Sessione
-Salvataggio rapido dello stato attuale di lavoro.
+Generata la guida passo-passo `INSTALL.md` contenente le 3 modalità di installazione delle Skill (Globale tramite `skills.json`, Locale `.agents/skills/` e Copia diretta in `.gemini/config/skills/`).
 
 ## 📊 Stato Git
 ```text
-?? skills/mb-save-system/
+M README.md
+?? INSTALL.md
 ```
 
 ---
-*Generato automaticamente da MB Save System*
+*Generato da MB Save System*

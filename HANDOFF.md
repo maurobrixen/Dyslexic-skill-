@@ -1,34 +1,26 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized)
 
-**Data/Ora**: 2026-08-01 16:26:52  
+**Data/Ora**: 2026-08-02 16:32:00  
 **Branch Git**: `master`  
-**Ultimo Commit**: `629fc95 Add mb-chembl-database skill to skills collection`
+**Ultimo Commit / Modifica**: `Creazione guida di installazione completa INSTALL.md`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: Creazione sistema di salvataggio mb-save-system
-- **Stato**: In corso / Pronto per ripresa
+- **Obiettivo**: Documentare in modo chiaro e dettagliato in formato Markdown tutte le istruzioni per l'installazione della suite **MB Skills**.
+- **Stato**: Completato al 100%.
 
 ---
 
-## 💡 2. Decisioni Architetturali & Regole
-- Nessuna decisione registrata
+## 💡 2. Guida di Installazione (`INSTALL.md`)
+Istruzioni strutturate su 3 livelli:
+1. **Registrazione Globale tramite `skills.json`** (Consigliata per zero duplicazioni).
+2. **Copia Locale per Progetto (`.agents/skills/`)** (Ideale per repository standalone).
+3. **Copia Globale Diretta (`.gemini/config/skills/`)** (Attivazione immediata a livello di sistema).
 
 ---
 
-## 🔄 3. Task in Sospeso & Loop Aperti
-- [ ] Nessun task in sospeso
-
----
-
-## 📂 4. Stato dei File
-```text
-?? SESSION_STATE.md
-?? skills/mb-save-system/
-```
-
----
-
-## 🚀 5. Prossimi Passi per il Riavvio
-1. Proseguire secondo i requisiti utente
+## 🔄 3. Task Completati
+- [x] Creazione di `INSTALL.md`
+- [x] Collegamento guida in `README.md`
+- [x] Aggiornamento di `SESSION_STATE.md` e `HANDOFF.md`
