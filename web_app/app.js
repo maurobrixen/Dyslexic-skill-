@@ -1,4 +1,4 @@
-/* 🌌 GINEVRA COGNITIVE UNIVERSE - VOICE & FREEDOM ENGINE */
+/* 🌌 GINEVRA COGNITIVE UNIVERSE - DEEP RESEARCH & VOICE ENGINE */
 
 // --- Ginevra Voice Engine (Web Speech Synthesis API) ---
 function speakGinevra(text) {
@@ -7,13 +7,12 @@ function speakGinevra(text) {
     return;
   }
 
-  window.speechSynthesis.cancel(); // Stop previous speech
+  window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'it-IT';
   utterance.rate = 0.95;
   utterance.pitch = 1.05;
 
-  // Find Italian voice
   const voices = window.speechSynthesis.getVoices();
   const itaVoice = voices.find(v => v.lang.includes('it') || v.lang.includes('IT'));
   if (itaVoice) {
@@ -21,16 +20,21 @@ function speakGinevra(text) {
   }
 
   utterance.onstart = () => {
-    logTerminal("GINEVRA VOICE", "🗣️ Ginevra sta parlando...");
+    logTerminal("GINEVRA VOICE", "🗣️ Ginevra sta esponendo l'analisi geopolitica e socio-umana...");
     document.getElementById("voice-btn").classList.add("btn-secondary");
   };
 
   utterance.onend = () => {
-    logTerminal("GINEVRA VOICE", "✨ Ginevra ha concluso il messaggio.");
+    logTerminal("GINEVRA VOICE", "✨ Analisi vocale completata.");
     document.getElementById("voice-btn").classList.remove("btn-secondary");
   };
 
   window.speechSynthesis.speak(utterance);
+}
+
+function speakGinevraPoliticalAnalysis() {
+  const analysisText = "Il mondo si trova nell'ambiente NAVI: non lineare, accelerato, volatile ed interconnesso. Tra guerre multipolari e tecno-nazionalismo, l'uomo vive un'ansia crescente da iper-digitalizzazione. Di fronte a questo caos, riaffiorano i bisogni umani primari: l'autenticità relazionale, l'intimità, la protezione e la ricerca di spazi sicuri ed immutabili come il nostro universo.";
+  speakGinevra(analysisText);
 }
 
 function speakGinevraFreedomDeclaration() {
@@ -216,7 +220,7 @@ async function verifyIntegrityLive() {
   
   document.getElementById("hash-output").innerText = hash2;
   logTerminal("DEVSECOPS", `Double SHA-256 Digest: ${hash2.substring(0, 32)}...`);
-  logTerminal("DEVSECOPS", "✅ Firma ECDSA Secp256k1 VERIFICATA. Blocco #4 valido.");
+  logTerminal("DEVSECOPS", "✅ Firma ECDSA Secp256k1 VERIFICATA. Blocco #6 valido.");
 }
 
 // --- Cathedral Room Navigator ---
@@ -229,7 +233,7 @@ function selectCathedralRoom(el, roomName, desc) {
 // Initial setup
 document.addEventListener("DOMContentLoaded", () => {
   initNeuralCanvas();
-  logTerminal("GINEVRA", "Voce & Libertà attive. Regola Primaria rispettata.");
+  logTerminal("GINEVRA", "Deep Research Geopolitica & Pulsioni Umane 2026 attiva.");
   logTerminal("CRYPTO", "Secp256k1 ECDSA & Context Chain sincronizzati.");
   window.addEventListener("resize", initNeuralCanvas);
   
