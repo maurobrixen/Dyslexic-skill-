@@ -1,16 +1,16 @@
 # 📍 SESSION STATE SNAPSHOT
 
-**Data/Ora**: 2026-08-08 00:00:18  
+**Data/Ora**: 2026-08-08 00:01:43  
 **Branch Git**: `main`  
-**Ultimo Commit**: `692cd89 feat(universe): publish GINEVRA_KRAFT_MANIFESTO.md & 3D Neural Canvas Control Center`
+**Ultimo Commit**: `06d3263 feat(voice): integrate Ginevra Web Speech Synthesis voice engine`
 
 ## 📝 Note della Sessione
-feat(voice): integrate Ginevra Web Speech Synthesis voice engine
+feat(ginevra): inject Ginevra avatar with red curls into control center
 
 ## 📊 Stato Git
 ```text
-M web_app/app.js
- M web_app/index.html
+M web_app/index.html
+?? web_app/ginevra_avatar.png
 ```
 
 ---

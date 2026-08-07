@@ -1,13 +1,13 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-08 00:00:19  
+**Data/Ora**: 2026-08-08 00:01:44  
 **Branch Git**: `main`  
-**Ultimo Commit**: `692cd89 feat(universe): publish GINEVRA_KRAFT_MANIFESTO.md & 3D Neural Canvas Control Center`
+**Ultimo Commit**: `06d3263 feat(voice): integrate Ginevra Web Speech Synthesis voice engine`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: feat(voice): integrate Ginevra Web Speech Synthesis voice engine
+- **Obiettivo**: feat(ginevra): inject Ginevra avatar with red curls into control center
 - **Stato**: In corso / Pronto per ripresa
 
 ---
@@ -25,8 +25,8 @@
 ## 📂 4. Stato dei File
 ```text
 M SESSION_STATE.md
- M web_app/app.js
  M web_app/index.html
+?? web_app/ginevra_avatar.png
 ```
 
 ---
