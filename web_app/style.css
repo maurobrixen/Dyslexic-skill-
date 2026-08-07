@@ -26,9 +26,9 @@
 body {
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(121, 40, 202, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.08) 0%, transparent 60%);
+    radial-gradient(circle at 10% 20%, rgba(121, 40, 202, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.1) 0%, transparent 60%);
   color: var(--text-main);
   font-family: var(--font-family);
   min-height: 100vh;
@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 2rem;
-  background: rgba(7, 9, 19, 0.85);
+  background: rgba(7, 9, 19, 0.9);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-glow);
   position: sticky;
@@ -53,17 +53,7 @@ body {
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-badge {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.1rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+  gap: 0.85rem;
 }
 
 .logo-title {
@@ -98,6 +88,48 @@ body {
   border-radius: 50%;
   background: var(--accent-green);
   box-shadow: 0 0 8px var(--accent-green);
+}
+
+/* Multi-Tab Navigation Bar */
+.tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: rgba(12, 16, 30, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--accent-cyan);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+/* Tab Content Panes */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: grid;
 }
 
 /* Layout Grid */
@@ -283,4 +315,34 @@ body {
 input[type=range] {
   width: 100%;
   accent-color: var(--accent-cyan);
+}
+
+/* Auditor Card Grid */
+.auditor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .auditor-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.auditor-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.auditor-role {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.3rem;
+}
+
+.auditor-verdict {
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
