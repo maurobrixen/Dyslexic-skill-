@@ -1,4 +1,75 @@
-/* 🌌 MB SKILLS SUITE - LIVE INTERACTIVE DASHBOARD ENGINE */
+/* 🌌 GINEVRA COGNITIVE UNIVERSE - LIVE INTERACTIVE ENGINE */
+
+// --- 3D Holographic Neural Canvas Engine ---
+let canvas, ctx;
+let nodes = [];
+const nodeCount = 35;
+
+function initNeuralCanvas() {
+  canvas = document.getElementById("neural-canvas");
+  if (!canvas) return;
+  ctx = canvas.getContext("2d");
+  
+  // Set resolution
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  nodes = [];
+  for (let i = 0; i < nodeCount; i++) {
+    nodes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 1.2,
+      vy: (Math.random() - 0.5) * 1.2,
+      radius: Math.random() * 3 + 2,
+      color: i % 3 === 0 ? "#00f2fe" : (i % 3 === 1 ? "#7928ca" : "#ff007f")
+    });
+  }
+
+  requestAnimationFrame(drawNeuralCanvas);
+}
+
+function drawNeuralCanvas() {
+  if (!ctx) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw connections
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.strokeStyle = `rgba(0, 242, 254, ${1 - dist / 100})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Update & Draw nodes
+  nodes.forEach(n => {
+    n.x += n.vx;
+    n.y += n.vy;
+
+    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+    ctx.fillStyle = n.color;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = n.color;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  });
+
+  requestAnimationFrame(drawNeuralCanvas);
+}
 
 // --- Audio Oscillator Engine (Web Audio API) ---
 let audioCtx = null;
@@ -17,7 +88,6 @@ function toggleBiofeedbackAudio() {
   const btn = document.getElementById("audio-toggle-btn");
   
   if (!isPlayingAudio) {
-    // 432 Hz Solfeggio Base + 8 Hz Binaural Theta Wave
     const baseFreq = parseFloat(document.getElementById("freq-slider").value) || 432;
     const binauralBeat = 8; // Theta state
 
@@ -112,7 +182,7 @@ async function verifyIntegrityLive() {
   
   document.getElementById("hash-output").innerText = hash2;
   logTerminal("DEVSECOPS", `Double SHA-256 Digest: ${hash2.substring(0, 32)}...`);
-  logTerminal("DEVSECOPS", "✅ Firma ECDSA Secp256k1 VERIFICATA. Integrità del blocco al 100%.");
+  logTerminal("DEVSECOPS", "✅ Firma ECDSA Secp256k1 VERIFICATA. Blocco #3 valido.");
 }
 
 // --- Cathedral Room Navigator ---
@@ -124,6 +194,8 @@ function selectCathedralRoom(el, roomName, desc) {
 
 // Initial setup
 document.addEventListener("DOMContentLoaded", () => {
-  logTerminal("SYSTEM", "MB Skills Suite Web Engine v1.0.0 avviato.");
+  initNeuralCanvas();
+  logTerminal("GINEVRA", "Universo Cognitivo v1.0.0 attivo.");
   logTerminal("CRYPTO", "Secp256k1 ECDSA & Context Chain sincronizzati.");
+  window.addEventListener("resize", initNeuralCanvas);
 });

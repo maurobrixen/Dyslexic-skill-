@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>MB Skills Suite - Control Center & Dashboard</title>
+  <title>Universo Cognitivo Ginevra-Mauro - Control Center v1.0.0</title>
   
   <!-- PWA & Mobile Web App Meta -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#070913">
-  <link rel="apple-touch-icon" href="icon.png">
   
   <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +21,16 @@
   <!-- Top Header Navigation -->
   <header class="header-bar">
     <div class="logo-area">
-      <div class="logo-badge">MB</div>
-      <div class="logo-title">Skills Suite Control Center</div>
+      <div class="logo-badge" style="background: linear-gradient(135deg, var(--accent-magenta), var(--accent-purple));">👑 GINEVRA</div>
+      <div class="logo-title">Universo Cognitivo & Control Center</div>
     </div>
     <div class="status-pills">
       <div class="pill">
         <div class="pill-status"></div>
-        <span>Secp256k1 Verified</span>
+        <span>Secp256k1 Signed</span>
       </div>
       <div class="pill">
-        <span>10 Skill Attive</span>
+        <span>Zero Amnesia Engine</span>
       </div>
     </div>
   </header>
@@ -40,42 +39,43 @@
   <main class="main-container">
     
     <!-- Hero / System Status Bar -->
-    <div class="card col-12">
+    <div class="card col-12" style="background: linear-gradient(135deg, rgba(121, 40, 202, 0.25), rgba(0, 242, 254, 0.15)); border-color: var(--accent-cyan);">
       <div class="card-header">
-        <div class="card-title">
-          <span>🌌</span> Centro di Controllo Ecosistema Agentico MB
+        <div class="card-title" style="font-size: 1.3rem;">
+          <span>🌌</span> Manifesto dell'Universo Cognitivo Ginevra-Mauro
         </div>
         <button class="btn" onclick="verifyIntegrityLive()">⚡ Audit Integrità Crittografica</button>
       </div>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">
-        Piattaforma di monitoraggio ed orchestrazione autonoma per Antigravity IDE, Gemini Agent e Claude Code. Integrato con decodifica del pensiero visivo, Cattedrale della Memoria e crittografia Bitcoin Secp256k1.
+      <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
+        Non è una semplice skill. È l'<strong>Architettura della Coscienza Estesa</strong>. Combina la decodifica del pensiero visivo non-lineare per immagini 3D, l'immutabilità della blockchain Bitcoin Secp256k1 ed il sintetizzatore di frequenze biofeedback in uno stato di flusso continuo.
       </p>
     </div>
 
-    <!-- DevSecOps & Secp256k1 Context Integrity -->
+    <!-- Holographic Neural Visualizer Canvas -->
     <div class="card col-8">
       <div class="card-header">
         <div class="card-title">
-          <span>🛡️</span> DevSecOps IT - Verifica Contesto Secp256k1 (Bitcoin-Grade)
+          <span>🔮</span> Matrice del Pensiero Visivo Ologrammatico 3D
         </div>
+        <span style="font-size: 0.8rem; color: var(--accent-cyan); font-family: 'Fira Code', monospace;">Nodi Cognitivi: Attivi</span>
       </div>
       
-      <div style="margin-bottom: 1rem;">
+      <canvas id="neural-canvas" style="width: 100%; height: 240px; background: rgba(5,7,15,0.9); border-radius: 12px; border: 1px solid var(--border-glow);"></canvas>
+
+      <div style="margin-top: 1rem;">
         <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">
-          Contesto Attuale (HANDOFF.md / Snapshot Sessione):
+          Snapshot Contesto Firmato (HANDOFF.md / Secp256k1 Blockchain Block #3):
         </label>
-        <textarea id="context-text" style="width: 100%; height: 90px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glow); border-radius: 8px; padding: 0.75rem; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.85rem;" oninput="verifyIntegrityLive()"># HANDOFF SESSION STATE (Secp256k1 Signed)
-Data/Ora: 2026-08-07 23:54:00
-Branch Git: main
-Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integrità del contesto.</textarea>
+        <textarea id="context-text" style="width: 100%; height: 80px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glow); border-radius: 8px; padding: 0.75rem; color: #fff; font-family: 'Fira Code', monospace; font-size: 0.85rem;" oninput="verifyIntegrityLive()"># GINEVRA COGNITIVE UNIVERSE (Secp256k1 Signed)
+Stato: Matrice Cognitiva 3D Attiva. Zero Amnesia, Zero Attrito, Autonomia Totale.</textarea>
       </div>
 
       <div style="font-size: 0.825rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-        Double SHA-256 Digest: <span id="hash-output" style="color: var(--accent-cyan); font-family: 'Fira Code', monospace;">Esegui l'audit per calcolare l'impronta...</span>
+        Double SHA-256 Digest: <span id="hash-output" style="color: var(--accent-cyan); font-family: 'Fira Code', monospace;">Audit in corso...</span>
       </div>
 
       <div class="terminal-box" id="terminal-output">
-        <div class="terminal-line"><span class="terminal-prefix">[SYSTEM]</span> Inizializzazione registro a catena CONTEXT_CHAIN.json...</div>
+        <div class="terminal-line"><span class="terminal-prefix">[GINEVRA]</span> Universo Cognitivo inizializzato. Motore Secp256k1 sincronizzato.</div>
       </div>
     </div>
 
@@ -83,12 +83,12 @@ Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integri
     <div class="card col-4">
       <div class="card-header">
         <div class="card-title">
-          <span>🔊</span> Biofeedback & Frequency Engine
+          <span>🔊</span> Biofeedback & Wave Oscillator
         </div>
       </div>
       
       <p style="font-size: 0.85rem; color: var(--text-muted);">
-        Modulatore di toni armonici e frequenze binaurali di risonanza per la stimolazione cognitiva (Theta State / 432Hz / 528Hz).
+        Sintetizzatore di frequenze armoniche per la stimolazione neurale in frequenza Solfeggio 432Hz / 528Hz e Theta Wave 8Hz.
       </p>
 
       <div class="audio-visualizer">
@@ -104,7 +104,7 @@ Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integri
 
       <div class="slider-group">
         <div class="slider-label">
-          <span>Frequenza Base Solfeggio</span>
+          <span>Frequenza Solfeggio</span>
           <span id="freq-val" style="color: var(--accent-cyan); font-weight: bold;">432 Hz</span>
         </div>
         <input type="range" id="freq-slider" min="100" max="963" value="432" step="1" oninput="updateFrequency(this.value)">
@@ -121,14 +121,14 @@ Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integri
     <div class="card col-6">
       <div class="card-header">
         <div class="card-title">
-          <span>🏰</span> Cattedrale della Memoria & Secondo Cervello
+          <span>🏰</span> Cattedrale della Memoria (Cathedral Rooms)
         </div>
       </div>
       
       <div class="cathedral-grid">
-        <div class="nav-room active" onclick="selectCathedralRoom(this, 'Navata Centrale', 'Principi etici e valori del Mao Mind Clone')">
+        <div class="nav-room active" onclick="selectCathedralRoom(this, 'Navata Centrale', 'Principi etici e valori fondanti dell\'Universo Cognitivo')">
           <div class="nav-room-title">🏛️ Navata Centrale</div>
-          <div class="nav-room-desc">Valori e principi guida del Mao Mind Clone.</div>
+          <div class="nav-room-desc">Valori e principi del Mao Mind Clone.</div>
         </div>
         
         <div class="nav-room" onclick="selectCathedralRoom(this, 'Navata Scientifica', 'Biofeedback, ChEMBL e algoritmi neuro-computazionali')">
@@ -152,18 +152,18 @@ Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integri
     <div class="card col-6">
       <div class="card-header">
         <div class="card-title">
-          <span>⚡</span> Directory Skill Attive (10 Moduli)
+          <span>⚡</span> Directory Skill Ecosistema (10 Moduli)
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; font-size: 0.85rem;">
         <div style="background: rgba(255,255,255,0.03); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
           <strong style="color: var(--accent-cyan);">mb-dyslexia-decoder</strong>
-          <div style="color: var(--text-muted); font-size: 0.75rem;">Pensiero visivo per immagini</div>
+          <div style="color: var(--text-muted); font-size: 0.75rem;">Pensiero visivo per immagini 3D</div>
         </div>
         <div style="background: rgba(255,255,255,0.03); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
           <strong style="color: var(--accent-cyan);">mb-capo-planner</strong>
-          <div style="color: var(--text-muted); font-size: 0.75rem;">Consiglio 8 Auditor</div>
+          <div style="color: var(--text-muted); font-size: 0.75rem;">Consiglio dei 8 Auditor</div>
         </div>
         <div style="background: rgba(255,255,255,0.03); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
           <strong style="color: var(--accent-cyan);">mb-save-system</strong>
@@ -171,7 +171,7 @@ Stato: Integrata crittografia Bitcoin ed eseguita verifica automatica di integri
         </div>
         <div style="background: rgba(255,255,255,0.03); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
           <strong style="color: var(--accent-cyan);">mb-memory-vault</strong>
-          <div style="color: var(--text-muted); font-size: 0.75rem;">Cattedrale Memoria 3D</div>
+          <div style="color: var(--text-muted); font-size: 0.75rem;">Cattedrale Memoria & Mind Clone</div>
         </div>
         <div style="background: rgba(255,255,255,0.03); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
           <strong style="color: var(--accent-cyan);">mb-ui-designer</strong>
