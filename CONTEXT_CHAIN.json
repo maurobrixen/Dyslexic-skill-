@@ -88,5 +88,35 @@
     },
     "prev_hash": "344b7c368770c0c1356f201d28f8621698732b81a3f1b41639377e2e3516947d",
     "block_index": 6
+  },
+  {
+    "file": "HANDOFF.md",
+    "timestamp": "2026-08-08 00:04:58",
+    "hash256": "da38f7b6b5746a722c56818f78fcf66d3cccd26bd1515bfa47d98f2a2a8ab9da",
+    "pubkey": {
+      "x": "0x71cb075e294da923e4ef281884b1031b0ce00fe075b513aa52c6af1cd6986e43",
+      "y": "0xd2e95dc090c6d2e40fa4f47a7a9ff9732d0a9b87884615329a0e6b0d4d5e6dfe"
+    },
+    "signature": {
+      "r": "0x23750e752fef36afb7efef52b922f670a4413e6cc3aa070ecec6e747e53fe910",
+      "s": "0x1cb8772c344360db1b3c2b5e255ebe1e7f99d00fc99283c4c3b01ffed4e4899a"
+    },
+    "prev_hash": "933671ec842c38bb9bd668a864097e8d71bf14eda96a29e91218829b0ea94741",
+    "block_index": 7
+  },
+  {
+    "file": "HANDOFF.md",
+    "timestamp": "2026-08-08 00:05:39",
+    "hash256": "f1268ca7d3fc8d6b914da47c556c25877ccc5d611ab8f3c40a14ba5dd6b34e0e",
+    "pubkey": {
+      "x": "0x71cb075e294da923e4ef281884b1031b0ce00fe075b513aa52c6af1cd6986e43",
+      "y": "0xd2e95dc090c6d2e40fa4f47a7a9ff9732d0a9b87884615329a0e6b0d4d5e6dfe"
+    },
+    "signature": {
+      "r": "0xa1769722aba36b6e79259aa395f37b6d862d5899420cbd45eff6155b3d895c3b",
+      "s": "0x32b9b8c301c7af2516ad423cf096a6c64a9fd8118b2a9e273d53d455e4c7e054"
+    },
+    "prev_hash": "da38f7b6b5746a722c56818f78fcf66d3cccd26bd1515bfa47d98f2a2a8ab9da",
+    "block_index": 8
   }
 ]
