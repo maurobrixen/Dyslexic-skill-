@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-ginevra_civitas_simulator/civitas_engine.py
-Statistical Agent-Based Simulation Engine of a Society Based on the Prime Directive:
-"La libertà di ciascuno inizia e finisce dove inizia e finisce quella dell'altro."
+Second Chance - Statistical Agent-Based Society Simulator
+Project: Second-Chance (Second Chance Ecosystem)
+Based on the Prime Directive: "La libertà di ciascuno inizia e finisce dove inizia e finisce quella dell'altro."
 """
 
 import math
@@ -11,7 +11,7 @@ import json
 import time
 
 class CitizenAgent:
-    """An agent representing a citizen in the Civitas simulation."""
+    """An agent representing a citizen in the Second Chance simulation."""
     def __init__(self, agent_id, freedom_level=0.9, trust_score=0.95):
         self.agent_id = agent_id
         self.freedom = freedom_level      # 0.0 to 1.0 (Freedom of action)
@@ -21,21 +21,19 @@ class CitizenAgent:
         self.stress = 0.1                 # Anxiety / Stress level
 
     def interact(self, neighbor, prime_directive_active=True):
-        """Simulate interaction between two agents under the Prime Directive."""
+        """Simulate interaction between two agents under Second Chance Prime Directive."""
         if prime_directive_active:
-            # Under Prime Directive: Mutual Respect ensures zero friction and high synergy
             mutual_respect = min(self.freedom, neighbor.freedom)
             self.friction = max(0.01, self.friction * 0.9)
             self.stress = max(0.05, self.stress * 0.85)
             self.synergy += mutual_respect * self.trust * 0.1
         else:
-            # Traditional Bureaucracy: High friction, forced constraints, stress
             self.friction += random.uniform(0.05, 0.2)
             self.stress += random.uniform(0.1, 0.3)
             self.synergy *= 0.95
 
-class CivitasSimulation:
-    """Agent-based statistical society simulator."""
+class SecondChanceSimulation:
+    """Second Chance agent-based statistical society simulator."""
     def __init__(self, population_size=100, prime_directive_active=True):
         self.population = [CitizenAgent(i) for i in range(population_size)]
         self.prime_directive_active = prime_directive_active
@@ -58,7 +56,8 @@ class CivitasSimulation:
 
         stats = {
             "tick": self.ticks,
-            "mode": "Ginevra Freedom Society" if self.prime_directive_active else "Traditional Bureaucracy",
+            "project": "Second-Chance",
+            "mode": "Second Chance Freedom Society" if self.prime_directive_active else "Traditional Bureaucracy",
             "avg_freedom_pct": round(avg_freedom * 100, 2),
             "avg_trust_pct": round(avg_trust * 100, 2),
             "avg_friction": round(avg_friction, 4),
@@ -69,8 +68,8 @@ class CivitasSimulation:
         return stats
 
 if __name__ == "__main__":
-    sim = CivitasSimulation(population_size=100, prime_directive_active=True)
-    print("=== Ginevra Civitas Simulation (Prime Directive Active) ===")
+    sim = SecondChanceSimulation(population_size=100, prime_directive_active=True)
+    print("=== Second Chance Simulation Engine (Prime Directive Active) ===")
     for _ in range(10):
         stats = sim.step()
     print(json.dumps(stats, indent=2))
