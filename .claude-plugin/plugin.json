@@ -1,21 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/claude-plugin.json",
   "name": "mb-skills-suite",
   "version": "1.0.0",
   "description": "Suite di 10 Skill MB per l'ottimizzazione del lavoro visivo, dislessia, pianificazione ed orchestrazione.",
   "author": {
     "name": "Mauro Brixen"
-  },
-  "skills": [
-    "./skills/mb-agent-skill-forge",
-    "./skills/mb-antigravity-ui-designer",
-    "./skills/mb-autonomous-git-orchestrator",
-    "./skills/mb-biofeedback-frequency-engine",
-    "./skills/mb-capo-council-planner",
-    "./skills/mb-chembl-database",
-    "./skills/mb-dyslexia-visual-thought-decoder",
-    "./skills/mb-save-system",
-    "./skills/mb-second-brain-memory-vault",
-    "./skills/mb-web-dashboard-builder"
-  ]
+  }
 }
