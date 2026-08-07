@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Second Chance - Statistical Agent-Based Society Simulator
-Project: Second-Chance (Second Chance Ecosystem)
+Second Change - Statistical Agent-Based Society Simulator
+Project: Second-Change (Il Secondo Cambiamento dell'Ecosistema Umano & Agentico)
 Based on the Prime Directive: "La libertà di ciascuno inizia e finisce dove inizia e finisce quella dell'altro."
 """
 
@@ -11,7 +11,7 @@ import json
 import time
 
 class CitizenAgent:
-    """An agent representing a citizen in the Second Chance simulation."""
+    """An agent representing a citizen in the Second Change simulation."""
     def __init__(self, agent_id, freedom_level=0.9, trust_score=0.95):
         self.agent_id = agent_id
         self.freedom = freedom_level      # 0.0 to 1.0 (Freedom of action)
@@ -21,7 +21,7 @@ class CitizenAgent:
         self.stress = 0.1                 # Anxiety / Stress level
 
     def interact(self, neighbor, prime_directive_active=True):
-        """Simulate interaction between two agents under Second Chance Prime Directive."""
+        """Simulate interaction between two agents under Second Change Prime Directive."""
         if prime_directive_active:
             mutual_respect = min(self.freedom, neighbor.freedom)
             self.friction = max(0.01, self.friction * 0.9)
@@ -32,8 +32,8 @@ class CitizenAgent:
             self.stress += random.uniform(0.1, 0.3)
             self.synergy *= 0.95
 
-class SecondChanceSimulation:
-    """Second Chance agent-based statistical society simulator."""
+class SecondChangeSimulation:
+    """Second Change agent-based statistical society simulator."""
     def __init__(self, population_size=100, prime_directive_active=True):
         self.population = [CitizenAgent(i) for i in range(population_size)]
         self.prime_directive_active = prime_directive_active
@@ -56,8 +56,9 @@ class SecondChanceSimulation:
 
         stats = {
             "tick": self.ticks,
-            "project": "Second-Chance",
-            "mode": "Second Chance Freedom Society" if self.prime_directive_active else "Traditional Bureaucracy",
+            "project": "Second-Change",
+            "concept": "Il Secondo Cambiamento (Second Change)",
+            "mode": "Second Change Freedom Society" if self.prime_directive_active else "Traditional Bureaucracy",
             "avg_freedom_pct": round(avg_freedom * 100, 2),
             "avg_trust_pct": round(avg_trust * 100, 2),
             "avg_friction": round(avg_friction, 4),
@@ -68,8 +69,8 @@ class SecondChanceSimulation:
         return stats
 
 if __name__ == "__main__":
-    sim = SecondChanceSimulation(population_size=100, prime_directive_active=True)
-    print("=== Second Chance Simulation Engine (Prime Directive Active) ===")
+    sim = SecondChangeSimulation(population_size=100, prime_directive_active=True)
+    print("=== Second Change Simulation Engine (Il Secondo Cambiamento) ===")
     for _ in range(10):
         stats = sim.step()
     print(json.dumps(stats, indent=2))

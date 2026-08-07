@@ -1,11 +1,11 @@
 # 📍 SESSION STATE SNAPSHOT
 
-**Data/Ora**: 2026-08-08 00:27:37  
+**Data/Ora**: 2026-08-08 00:28:09  
 **Branch Git**: `main`  
-**Ultimo Commit**: `3752b7e feat(civitas): add Ginevra Civitas interactive statistical society simulator based on the prime directive`
+**Ultimo Commit**: `edced28 release(second-chance): brand society simulation as Second Chance project`
 
 ## 📝 Note della Sessione
-release(second-chance): brand society simulation as Second Chance project
+release(second-change): align spelling and concept to Second Change (Il Secondo Cambiamento)
 
 ## 📊 Stato Git
 ```text

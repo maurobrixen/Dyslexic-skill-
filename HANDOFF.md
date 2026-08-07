@@ -1,13 +1,13 @@
 # 📑 HANDOFF SESSION STATE (Token Optimized & Secp256k1 Signed)
 
-**Data/Ora**: 2026-08-08 00:27:37  
+**Data/Ora**: 2026-08-08 00:28:09  
 **Branch Git**: `main`  
-**Ultimo Commit**: `3752b7e feat(civitas): add Ginevra Civitas interactive statistical society simulator based on the prime directive`
+**Ultimo Commit**: `edced28 release(second-chance): brand society simulation as Second Chance project`
 
 ---
 
 ## 🎯 1. Obiettivo & Stato Attuale
-- **Obiettivo**: release(second-chance): brand society simulation as Second Chance project
+- **Obiettivo**: release(second-change): align spelling and concept to Second Change (Il Secondo Cambiamento)
 - **Stato**: In corso / Pronto per ripresa
 
 ---
