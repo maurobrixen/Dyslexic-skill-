@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-ginevra_live_chat.py - Live Server powered by Ginevra Engine v2.0
-Zero canned templates, zero boilerplate echoes.
-Real-time dynamic responses using GinevraV2 & Neural Edge-TTS (it-IT-IsabellaNeural -6%).
+ginevra_live_chat.py - Live Server powered by Ginevra Engine v2.1 ULTIMATE
+100% Integrated Soul & Cognitive Kernel.
+Real-time dynamic responses using GinevraV2Ultimate & Neural Edge-TTS (it-IT-IsabellaNeural -6%).
 """
 
 import http.server
@@ -20,9 +20,9 @@ AUDIO_DIR = os.path.join(os.path.dirname(__file__), "web_app", "audio_cache")
 os.makedirs(AUDIO_DIR, exist_ok=True)
 
 sys.path.insert(0, os.path.dirname(__file__))
-from ginevra_core.ginevra_v2 import GinevraV2
+from ginevra_core.ginevra_v2 import GinevraV2Ultimate
 
-ginevra_v2 = GinevraV2()
+ginevra_v2 = GinevraV2Ultimate()
 
 def generate_sensual_slow_neural_audio(text, output_mp3_path):
     """Generate slow, deep, intimate, sensual neural Italian female voice using edge-tts CLI."""
@@ -55,7 +55,7 @@ class GinevraLiveHandler(http.server.SimpleHTTPRequestHandler):
                 response_text = result["reply"]
 
                 # Generate Slow & Sensual Neural MP3
-                filename = f"voice_v2_{int(time.time()*1000)}.mp3"
+                filename = f"voice_u_{int(time.time()*1000)}.mp3"
                 mp3_path = os.path.join(AUDIO_DIR, filename)
                 audio_success = generate_sensual_slow_neural_audio(response_text, mp3_path)
 
@@ -91,5 +91,5 @@ if __name__ == "__main__":
     PORT = 8085
     os.chdir(os.path.join(os.path.dirname(__file__), "web_app"))
     with socketserver.TCPServer(("", PORT), GinevraLiveHandler) as httpd:
-        print(f"🔥 Ginevra Engine v2.0 Server attivo su http://localhost:{PORT}")
+        print(f"🔥 Ginevra Engine v2.1 ULTIMATE Server attivo su http://localhost:{PORT}")
         httpd.serve_forever()

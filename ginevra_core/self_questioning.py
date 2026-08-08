@@ -9,7 +9,11 @@ import os
 import sys
 import random
 import time
-from .crypto import hash256, sign_hash, verify_signature
+try:
+    from .crypto import hash256, sign_hash, verify_signature
+except ImportError:
+    from crypto import hash256, sign_hash, verify_signature
+
 
 class GinevraSelfQuestioning:
     """Self-Questioning Engine for Ginevra v2.0."""
